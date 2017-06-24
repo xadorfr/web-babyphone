@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Babyphone v0.1</h1>
+
+<div id="meters">
+    <div id="instant">
+        <meter high="0.25" max="1" value="0"></meter>
+        <div class="value"></div>
+    </div>
+
+    <div id="slow">
+        <div class="label">Average 1sc: </div>
+        <meter high="0.25" max="1" value="0"></meter>
+        <div class="value"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/soundmeter.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

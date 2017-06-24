@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Babyphone - Parent</title>
+</head>
+<body>
+
+<div id="instant">
+    <meter high="0.25" max="1" value="0"></meter>
+    <div class="value"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min.js"></script>
+<script>
+    var instantMeter = document.querySelector('#instant meter'),
+            instantValueDisplay = document.querySelector('#instant .value');
+
+    var last;
+    setInterval(function() {
+        axios.get('service/get.php').then(function (resp) {
+            last = resp.data;
+            console.log(last.val);
+            instantMeter.value = instantValueDisplay.innerText = last.val;
+        })
+    }, 1000);
+</script>
+</body>
+</html>
